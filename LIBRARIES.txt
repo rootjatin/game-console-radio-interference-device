@@ -1,0 +1,7 @@
+Required:
+- U8g2
+- RF24 by nRF24 / TMRh20
+- ESP32 board package for Arduino IDE
+
+Optional:
+- ESP32 BLE Arduino library, only if ENABLE_BLE_SCAN is changed to 1.
