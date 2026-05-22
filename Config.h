@@ -1,7 +1,7 @@
 #pragma once
 
 /*
-  Wave Rangers: Signal Rescue - ESP32 dual-nRF24 character RF game
+  Antinode Hunter Pro - ESP32 dual-nRF24 radio-wave game
 
   Target wiring from the user:
   OLED SDA/SCL  -> GPIO 21 / 22
@@ -62,15 +62,6 @@ constexpr uint8_t MAX_LEVEL     = 15;
 constexpr uint32_t FRAME_MS     = 33;   // about 30 FPS
 constexpr uint32_t RADIO_MS     = 45;   // nRF probe / scan cadence
 constexpr uint16_t DEBOUNCE_MS  = 28;
-constexpr uint16_t FIRE_COOLDOWN_MS = 430; // prevents repeated FIRE spam from becoming repeated captures
-constexpr uint16_t ROUND_ARM_MS = 850;     // new rounds must settle before capture is allowed
-constexpr float REQUIRED_LOCK = 0.82f;     // player must hold a good tune before FIRE succeeds
-
-// Relay Gauntlet applies the paper's nRF24 relay-game pattern: token hops are
-// only scored after a rolling lock, and risk mode changes data rate, power and
-// auto-retry settings together.
-constexpr uint32_t RELAY_MATCH_MS = 90000UL;
-constexpr uint16_t RELAY_ARM_MS   = 600;
 
 // WiFi/BLE scans are slow compared with rendering. Keep intervals long.
 constexpr uint32_t WIFI_SCAN_INTERVAL_MS = 16000;
@@ -79,5 +70,5 @@ constexpr uint32_t BLE_SCAN_INTERVAL_MS  = 23000;
 constexpr uint8_t  BLE_SCAN_SECONDS      = 1;
 
 // Scoring thresholds. Raise BASE_CAPTURE_THRESHOLD for a harder game.
-constexpr float BASE_CAPTURE_THRESHOLD = 0.72f;
-constexpr float MAX_CAPTURE_THRESHOLD  = 0.89f;
+constexpr float BASE_CAPTURE_THRESHOLD = 0.70f;
+constexpr float MAX_CAPTURE_THRESHOLD  = 0.86f;
